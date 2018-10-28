@@ -1,0 +1,44 @@
+
+import java.util.*;
+
+public class mindistance {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+       Scanner s = new Scanner(System.in);
+       int n = s.nextInt();
+       int[]arr = new int[n];
+       int[]temp = new int[n];
+       int k=0;
+       for(int i=0;i<n;i++)
+       {
+    	   arr[i]= s.nextInt();
+       }
+       int min = Integer.MAX_VALUE;
+       for(int i=0;i<arr.length;i++)
+       {
+    	   if(arr[i]<min)
+    	   {
+    		   min = arr[i];
+    	   }
+       }
+       for(int i=0;i<arr.length;i++)
+       {
+    	   if(arr[i]==min)
+    	   {
+    		   temp[k]=i;
+    		   k++;
+    	   }
+       }
+       int diff = Integer.MAX_VALUE;
+       for(int i=1;i<k;i++)
+       {
+    	   if((temp[i]-temp[i-1])<diff)
+    	   {
+    		   diff= temp[i]-temp[i-1]; 
+    	   }
+       }
+       System.out.println(diff);
+	}
+
+}
